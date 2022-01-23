@@ -5,4 +5,8 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/menuHome" />
+    <item
+        android:id="@+id/qrcodeFragment"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+        android:title="QRCode поиск" />
 </menu>

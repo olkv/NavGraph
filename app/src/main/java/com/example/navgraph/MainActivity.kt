@@ -16,11 +16,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Находим основной нафигационный контролер (область куда помещаем фрагменты)
         val navController = findNavController(R.id.my_nav_host_fragment)
+        //Находим нижнее меню
         val navBottom:BottomNavigationView = findViewById(R.id.navBottom)
 
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment))
+        //Заполняем настройки для стыковки пунктов в нижнем меню и навигационным контролером
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.qrcodeFragment))
+
+        //Переносим настройки в навигационный контролер
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        //Связваем навигационный контролер с нижнем меню
         navBottom.setupWithNavController(navController)
 
 
