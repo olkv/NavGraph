@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val navBottom:BottomNavigationView = findViewById(R.id.navBottom)
 
         //Заполняем настройки для стыковки пунктов в нижнем меню и навигационным контролером
+        //Выбираем только нужные нам фрагменты
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.qrcodeFragment))
 
         //Переносим настройки в навигационный контролер
@@ -32,4 +33,11 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.my_nav_host_fragment)
+
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
 }
